@@ -20,4 +20,6 @@ public interface MallCommentMapper {
     MallComment selectByUserIdProId(@Param("comUserId") Integer comUserId,@Param("comProId")Integer comProId);
     //根据用户id查找评价
     List<MallComment> findCommentByUserId(Integer comUserId);
+    
+    List<MallComment> findCommentByProductId(Integer productId);
 }

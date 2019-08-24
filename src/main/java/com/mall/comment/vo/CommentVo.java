@@ -6,7 +6,7 @@ public class CommentVo {
 	
 	    private Integer id;
 
-	    private Integer comUserId;//用户id
+	    private String username;//用户名
 	    
 	    private String name;//商品名称
 
@@ -23,26 +23,6 @@ public class CommentVo {
 	    private Date comTime;//评论时间
 
 	    private Integer comScore;//评论分数
-	    
-	    
-
-		public CommentVo() {
-			super();
-		}
-
-		public CommentVo(Integer id, Integer comUserId, String name, String subtitle, String mainImage, String comTitle,
-				String comContent, Date comTime, Integer comScore) {
-			super();
-			this.id = id;
-			this.comUserId = comUserId;
-			this.name = name;
-			this.subtitle = subtitle;
-			this.mainImage = mainImage;
-			this.comTitle = comTitle;
-			this.comContent = comContent;
-			this.comTime = comTime;
-			this.comScore = comScore;
-		}
 
 		public Integer getId() {
 			return id;
@@ -52,12 +32,12 @@ public class CommentVo {
 			this.id = id;
 		}
 
-		public Integer getComUserId() {
-			return comUserId;
+		public String getUsername() {
+			return username;
 		}
 
-		public void setComUserId(Integer comUserId) {
-			this.comUserId = comUserId;
+		public void setUsername(String username) {
+			this.username = username;
 		}
 
 		public String getName() {
@@ -115,8 +95,26 @@ public class CommentVo {
 		public void setComScore(Integer comScore) {
 			this.comScore = comScore;
 		}
-	    
+
+		public CommentVo(Integer id, String username, String name, String subtitle, String mainImage, String comTitle,
+				String comContent, Date comTime, Integer comScore) {
+			super();
+			this.id = id;
+			this.username = username;
+			this.name = name;
+			this.subtitle = subtitle;
+			this.mainImage = mainImage;
+			this.comTitle = comTitle;
+			this.comContent = comContent;
+			this.comTime = comTime;
+			this.comScore = comScore;
+		}
+
+		public CommentVo() {
+			super();
+		}
 	    
 	    
 
+		
 }

@@ -16,6 +16,8 @@ public interface ICommentService {
 	//根据评论id删除评论
 	public String deleteCommentById(Integer id);
 	
+	public PageInfo selectAllComment(Integer pageNum,Integer pageSize);
 	
+	public List<CommentVo> findCommentByProductId(Integer productId);
 
 }

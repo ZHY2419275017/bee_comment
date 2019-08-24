@@ -49,4 +49,9 @@
     select id, com_user_id, com_pro_id, com_title, com_content, com_time, com_score
     from mall_comment where com_user_id = #{comUserId}
   </select>
+  
+  <select id="findCommentByProductId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, com_user_id, com_pro_id, com_title, com_content, com_time, com_score
+    from mall_comment where com_pro_id = #{productId}
+  </select>
 </mapper>

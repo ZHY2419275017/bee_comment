@@ -7,7 +7,10 @@ import com.mall.comment.pojo.MallComment;
 import com.mall.comment.service.ICommentService;
 import com.mall.comment.vo.CommentVo;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@Controller
 @RequestMapping(value="/comment")
 public class CommentController {
    
@@ -59,5 +63,20 @@ public class CommentController {
     public String delete(Integer id){
         return commentService.deleteCommentById(id);
     }
+    
+    /**
+     * 根据商品id查询评价
+     * @param productId
+     * @return
+     */
+    @GetMapping(value="/findCommentByProductId")
+    public List<CommentVo> findCommentByProductId(Integer productId){
+    	return commentService.findCommentByProductId(productId);
+    }
+    
+   
+    
+    
+    
 
 }
